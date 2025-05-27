@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IATA Message Corrector</title>
+</head>
+<body>
+    <h1>IATA Message Corrector (FFR/6, FHL/5, FWB/16)</h1>
+    <form method="post">
+        <textarea name="message" rows="10" cols="80" placeholder="Paste your message here">{{ original }}</textarea><br>
+        <input type="submit" value="Correct Message">
+    </form>
+    {% if corrected %}
+        <h2>Corrected Message:</h2>
+        <pre>{{ corrected }}</pre>
+    {% endif %}
+</body>
+</html>
