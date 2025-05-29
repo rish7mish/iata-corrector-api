@@ -17,7 +17,15 @@ def correct_message(message, prompts_file="prompts.json"):
     message_type = detect_message_type(message)
     prompt = prompt_templates.get(message_type, prompt_templates["FFR/6"]).replace("{msg}", message)
 
-       
+    prompt = (
+    "You are an expert in IATA FWB/16 cargo message formats. "
+    "Please correct the following message strictly according to the IATA CIMP manual. "
+    "Preserve all forward slashes (/), correct any backslash or formatting issues, and "
+    "return only the corrected message without any additional explanation or context.\n\n"
+    "Correct this message:\n{msg}"
+)
+`
+  
     response = client.chat.completions.create(
         model="gpt-4",
         messages=[
