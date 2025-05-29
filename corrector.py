@@ -13,12 +13,11 @@ def detect_message_type(message):
 def correct_message(message):
     message_type = detect_message_type(message)
 
-    prompt = (
-        "You are an expert in IATA FWB/16 cargo message formats. "
-        "Please correct the following message strictly according to the IATA CIMP manual. "
-        "Preserve all forward slashes (/), correct any backslash or formatting issues, and "
-        "return only the corrected message without any additional explanation or context.\n\n"
-        "Correct this message:\n{msg}"
+   prompt = (
+        "You are an expert in IATA FWB/16 cargo message formats.  "
+        "Replace two consecutive new line character with single new line character . "
+        "Remove extra characters from every segement"
+        "Correct this message:{msg}"
     ).format(msg=message)
 
     response = client.chat.completions.create(
