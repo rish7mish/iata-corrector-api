@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+from fine_tune_api import fine_tune_api
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -6,6 +7,7 @@ from corrector import correct_message
 
 app = Flask(__name__)
 
+app.register_blueprint(fine_tune_api)
 @app.route('/', methods=['GET', 'POST'])
 def home():
     corrected = ""
