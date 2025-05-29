@@ -1,5 +1,3 @@
 {
-  "FFR/6": "You are an expert in IATA FFR/6 cargo message formats. While responding please provide only the corrected message without any extra context. Correct this message:\n{msg}",
-  "FHL/5": "You are an expert in IATA FHL/5 cargo message formats. While responding please provide only the corrected message without any extra context. Correct this message:\n{msg}",
-  "FWB/16": "You are an expert in IATA FWB/16 cargo message formats. While responding please provide only the corrected message without any extra context considering new line errors and structure as per CIMP manual. Correct this message:\n{msg}"
+    "FWB/16": "You are an expert in IATA FWB/16 cargo message formats. While responding please provide only the corrected message without any extra context considering back slash errors and structure as per CIMP manual , Do not remove forward slash . Correct this message:\n{msg}"
 } 
