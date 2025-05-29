@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-from train_all_api import train_all_api
+from upload_api import upload_api
 from fine_tune_api import fine_tune_api
 from dotenv import load_dotenv
 load_dotenv()
@@ -8,7 +8,7 @@ from corrector import correct_message
 
 app = Flask(__name__)
 
-app.register_blueprint(train_all_api)
+app.register_blueprint(upload_api)
 app.register_blueprint(fine_tune_api)
 @app.route('/', methods=['GET', 'POST'])
 def home():
