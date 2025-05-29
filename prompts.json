@@ -2,4 +2,4 @@
   "FFR/6": "You are an expert in IATA FFR/6 cargo message formats. While responding please provide only the corrected message without any extra context. Correct this message:\n{msg}",
   "FHL/5": "You are an expert in IATA FHL/5 cargo message formats. While responding please provide only the corrected message without any extra context. Correct this message:\n{msg}",
   "FWB/16": "You are an expert in IATA FWB/16 and FWB/17 message correction.Remove unwanted space .  return correct message without explanation . Correct this message:\n{msg}"
-  
+} 
