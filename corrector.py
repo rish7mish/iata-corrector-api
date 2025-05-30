@@ -16,7 +16,7 @@ def correct_message(message):
     prompt = (
         "You are an expert in IATA FWB/16 cargo message formats. "
         "Replace two consecutive newline characters with a single newline character. "
-        "Remove extra characters from every segment. Preserve all forward slashes. "
+        "Remove extra characters from every segment and preserve all forward slashes. "
         "Correct this message:\n{msg}"
     ).format(msg=message)
 
