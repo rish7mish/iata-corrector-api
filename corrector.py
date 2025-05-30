@@ -13,13 +13,13 @@ def detect_message_type(message):
 def correct_message(message):
     message_type = detect_message_type(message)
 
-   prompt = (
-    "You are an expert in IATA FWB/16 cargo message formats. "
-    "Replace two consecutive newline characters with a single newline character. "
-    "Remove extra characters from every segment. Preserve all forward slashes. "
-    "Correct this message:\n{msg}"
-).format(msg=message)
-
+    prompt = (
+        "You are an expert in IATA FWB/16 cargo message formats. "
+        "Replace two consecutive newline characters with a single newline character. "
+        "Remove extra characters from every segment. Preserve all forward slashes. "
+        "Properly structured with each sub-line on a new line and prefixed with slashes. "
+        "Correct this message:\n{msg}"
+    ).format(msg=message)
 
     response = client.chat.completions.create(
         model="gpt-4",
