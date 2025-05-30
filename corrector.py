@@ -14,6 +14,7 @@ def correct_message(message):
     message_type = detect_message_type(message)
 
     prompt = (
+        "This is a IATA FWB/16 cargo message. "
         "Replace two consecutive newline characters with a single newline character. "
         "Remove extra characters from every segment and preserve all forward slashes. "
         "Correct this message:\n{msg}"
