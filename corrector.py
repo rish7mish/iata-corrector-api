@@ -14,11 +14,13 @@ def correct_message(message):
     message_type = detect_message_type(message)
 
     prompt = (
-        "This is a IATA FWB/16 cargo message. "
-        "Replace two consecutive newline characters with a single newline character. "
-        "Remove extra characters from every segment and preserve all forward slashes. "
+        "You are an expert in IATA Cargo-IMP messaging standards. "
+        "This is a FWB/16 cargo message. "
+        "Replace multiple consecutive blank lines with a single newline. "
+        "Remove extra characters like repeated letters, overly long codes, or placeholder text, but do not delete valid fields. "
+        "Preserve the correct formatting, spacing, and line structure as per Cargo-IMP guidelines. "
         "Correct this message:\n{msg}"
-    ).format(msg=message)
+        ).format(msg=message)
 
     response = client.chat.completions.create(
         model="gpt-4",
