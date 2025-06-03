@@ -12,8 +12,8 @@ def correct_message(message):
         "- DO NOT remove slashes or field delimiters.\n"
         "- Remove extra blank lines if present.\n"
         "- Preserve correct formatting, line spacing, and structure as per Cargo-IMP FWB/16 guidelines.\n"
-        "\nHere is the message:\n\n" + message
-    )
+        "\nHere is the message:\n{msg}"
+        ).format(msg=message)
  
     response = client.chat.completions.create(
         model="gpt-4",
