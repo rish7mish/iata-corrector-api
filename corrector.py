@@ -12,6 +12,7 @@ def correct_message(message):
         "- DO NOT remove slashes or field delimiters.\n"
         "- Remove extra blank lines if present.\n"
         "- Preserve correct formatting, line spacing, and structure as per Cargo-IMP FWB/16 guidelines.\n"
+        "- Do not explain the changes or add any extra information — only return the corrected message.\n"
         "\nHere is the message:\n{msg}"
         ).format(msg=message)
  
